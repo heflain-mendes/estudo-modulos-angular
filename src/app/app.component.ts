@@ -1,19 +1,18 @@
+import { Resposta } from './model/Resposta';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = "apredendo modulos";
-  resposta?: string;
+  title = 'apredendo modulos';
+  infor!: Resposta;
 
-  constructor(){
+  constructor() {}
 
-  }
-
-  atualizarResposta = (r:string) => {
-
-  }
+  atualizarResposta = (r: Resposta) => {
+    this.infor = r;
+  };
 }

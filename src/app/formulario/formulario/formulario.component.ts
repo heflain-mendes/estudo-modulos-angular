@@ -1,3 +1,4 @@
+import { Resposta } from './../../model/Resposta';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Output } from '@angular/core';
 import {
@@ -16,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
 export class FormularioComponent implements OnInit {
   showform: boolean = false;
   formulario: FormGroup;
-  @Output() dados: EventEmitter<string> = new EventEmitter();
+  @Output() respostaOutput: EventEmitter<Resposta> = new EventEmitter();
 
   constructor(private formBiulder: FormBuilder, private http: HttpClient) {
     this.formulario = formBiulder.group({
@@ -49,10 +50,10 @@ export class FormularioComponent implements OnInit {
 
   buscarInformacao(cep: string) {
     cep.replace(/\D/g, '');
-    this.http.get(`//viacep.com.br/ws/${cep}/json/`).subscribe({
-      next: (sucesso) => {
-        this.dados.emit(JSON.stringify(sucesso));
-      }
+    this.http.get<Resposta>(`//viacep.com.br/ws/${cep}/json/`).subscribe({
+      next: (el) => {
+        this.respostaOutput.emit(el);
+      },
     });
   }
 

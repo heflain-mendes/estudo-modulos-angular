@@ -1,8 +1,10 @@
 <div id="principal">
   <div id="formulario">
-    <app-formulario (dados)="atualizarResposta($event)"></app-formulario>
+    <app-formulario
+      (respostaOutput)="atualizarResposta($event)"
+    ></app-formulario>
   </div>
-  <div id="mapa">
-    
+  <div id="exibicao">
+    <app-exibicao [informacao]="infor"></app-exibicao>
   </div>
 </div>

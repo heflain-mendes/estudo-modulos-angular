@@ -1,0 +1,14 @@
+<div id="principal" class="centraliza">
+  <div *ngIf="showSucesso">
+    <p>bairro: {{informacao.bairro}}</p>
+    <p>cep: {{informacao.cep}}</p>
+    <p>complemento: {{informacao.complemento}}</p>
+    <p>ddd: {{informacao.ddd}}</p>
+    <p>ibge: {{informacao.ibge}}</p>
+    <p>locaclidade: {{informacao.localidade}}</p>
+    <p>uf: {{informacao.uf}}</p>
+  </div>
+  <div *ngIf="showErro">
+    <p>Error: {{informacao.erro}}</p>
+  </div>
+</div>
