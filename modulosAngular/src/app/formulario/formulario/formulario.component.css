@@ -1,0 +1,20 @@
+#principal {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.centraliza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#cep {
+  background-color: black;
+}
+
+form button{
+  margin-top: 5px;
+}

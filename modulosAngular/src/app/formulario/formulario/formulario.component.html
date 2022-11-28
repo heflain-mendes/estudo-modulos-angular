@@ -1,0 +1,10 @@
+<div id="principal" class="centraliza">
+  <form class="centraliza" *ngIf="showform" [formGroup]="formulario" (ngSubmit)="buscar()">
+    <mat-form-field appearance="fill">
+      <mat-label>Cep</mat-label>
+      <input matInput formControlName="cep" name="cep" placeholder="xxxxxxxx"/>
+      <mat-hint *ngIf="showmensageErro('cep')">cep invalido</mat-hint>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">Enviar</button>
+  </form>
+</div>
